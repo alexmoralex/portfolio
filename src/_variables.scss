@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+$light_bg: #F2F2F2;
+$light_menu: #ECBE34;
+$light_text: #262626;
+$dark_bg: #193866;
+$dark_menu: #0B0B20;
+$dark_text: #C4C4C4;
+
+$font-family: 'Righteous', cursive;
+$transition: 1s all ease;
+
+@mixin all_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

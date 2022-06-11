@@ -1,0 +1,24 @@
+@import '../../../variables';
+
+#home{
+  @include all_center();
+  max-height: 100vh;
+  h1{
+    font-size: 8vw;
+  }
+  h2{
+    font-size: 4vw;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  #home{
+    h1{
+      font-size: 42px;
+    }
+    h2{
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+@import '../../variables';
+
+.footer{
+  margin: 20px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  path {
+    fill: $light_text;
+    stroke: none;
+  }
+}
+.menu{
+  background-color: $light_menu;
+  @include all_center();
+  height: 100vh;
+  width: 100%;
+  clip-path: polygon(10% 0%, 10% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 85%, 100% 85%, 0% 100%);
+  transition: $transition;
+  position: fixed;
+  top: 0;
+  button {
+    opacity: 0;
+    transition: 1s opacity ease-in, 1s transform ease-in, 1s color ease;
+    transform: translateY(20px);
+    background: none;
+    border: none;
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: $light_text;
+  }
+  button:before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 5px;
+    background-color: $light_text;
+    bottom: 0;
+    left: 0;
+    transition: .5s all ease;
+  }
+  button:hover:before{
+    width: 100%;
+  }
+}
+.menu.open{
+  clip-path: polygon(90% 0%, 40% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 78%, 90% 0%, 0% 100%);
+  button {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+//ICONS
+#theme-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+#menu-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+@media screen and (max-width: 989px){
+  .menu{
+    clip-path: polygon(15% 0%, 10% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 85%, 100% 90%, 0% 100%);
+    button{
+      font-size: 40px;
+    }
+  }
+  .menu.open {
+    clip-path: polygon(100% 0%, 100% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 0%, 0% 100%);
+  }
+  #menu-icon{
+    width: 50px;
+    height: auto;
+    left: 10px;
+  }
+  #theme-icon{
+    width: 50px;
+    height: auto;
+    top: 10px;
+    right: 10px;
+  }
+  .footer{
+    margin: 5px 10px;
+    svg{
+      height: auto;
+      width: 120px;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+@import './variables';
+
+//GENERAL & LIGHT THEME
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1,h2{
+  margin: 0;
+  cursor: default;
+  text-align: center;
+}
+button{
+  border: none;
+  background-color: transparent;
+  font-family: $font-family;
+  cursor: pointer;
+}
+button:focus{
+  outline: none;
+}
+svg {
+  filter: drop-shadow(5px 5px 1px rgba(0,0,0,0.2));
+  > *{
+    opacity: 0.5;
+    cursor: pointer;
+    pointer-events: bounding-box;
+    transition: 1s opacity ease;
+  }
+  > *:hover{
+    opacity: 1;
+  }
+  line, path{
+    stroke: $light_text;
+  } 
+}
+.App {
+  background-color: $light_bg;
+  color: $light_text;
+  transition: $transition;
+  min-height: 100vh;
+}
+
+//DARK THEME
+.App.dark{
+  background-color: $dark_bg;
+  color: $dark_text;
+  .menu{
+    background-color: $dark_menu;
+    button{
+      color: $dark_text;
+    }
+  }
+  svg {
+    filter: drop-shadow(0px 0px 5px rgba(255,255,255,0.9));
+    path, line{
+      stroke: $dark_text;
+    }
+  }
+  .footer path{
+    fill: $dark_text;
+  }
+  button:before {
+    background-color: $dark_text;
+  }
+  .navigation button{
+    color: $dark_menu;
+  }
+  #send {
+    background-color: rgba(11, 11, 32, 0.5);
+    color: $dark_text;
+  }
+  #send:hover {
+    background-color: $dark_menu;
+  }
+}
+
+//PAGES
+.pages{
+  #home, 
+  #works, 
+  #skills, 
+  #contact{
+    display: none;
+  }
+  h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+}
+.pages.home #home,
+.pages.works #works,
+.pages.skills #skills,
+.pages.contact #contact{
+  display: flex;
+  min-height: 100vh;
+}

@@ -1,0 +1,32 @@
+@import '../../../variables';
+
+#skills{
+  @include all_center();
+}
+
+.skill {
+  display: flex;
+  width: 70vw;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pic-skills {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+  img {
+    width: 17%;
+  }
+}
+
+@media screen and (max-width: 989px){
+  .skill{
+    flex-direction: column;
+  }
+  .pic-skills img {
+    width: 40%;
+    padding: 0 10px;
+  }
+}

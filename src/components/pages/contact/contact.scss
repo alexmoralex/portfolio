@@ -1,0 +1,81 @@
+@import '../../../variables';
+
+#contact {
+  @include all_center();
+
+  a{
+    color: inherit;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 60vh;
+  width: 25vw;
+  * {
+    border-radius: 5px;
+  }
+  input {
+    padding: 10px;
+    border: none;
+  }
+  textarea {
+    padding: 10px;
+    border: none;
+    resize: none;
+  }
+  button {
+    color: $light-text;
+    position: relative;
+    background-color: rgba(236,190,52,0.5);
+    padding: 10px;
+    margin: 0 auto;
+    width: 40%;
+    transition: .5s all ease;
+  }
+  button:hover {
+    background-color: rgba(236,190,52,1);
+  }
+}
+
+#send:after {
+  content: "t";
+  position: absolute;
+  top: 50%;
+  right: 30%;
+  transform: translateY(-50%);
+  // animation: send 3s linear infinite;
+}
+
+// @keyframes send{
+//   0%{
+//     top: 50%;
+//     right: 30%;
+//   }
+//   25%{
+//     top: 30%;
+//     right: 20%;
+//     transform: rotate(-90deg);
+//   }
+//   50%{
+//     top: 20%;
+//     right: 30%;
+//     transform: rotate(-180deg);
+//   }
+//   75%{
+//     top: 40%;
+//     right: 20%;
+//     transform: rotate(-270deg);
+//   }
+//   95%{
+//     transform: rotate(-360deg);
+//     opacity: 1;
+//   }
+//   100%{
+//     opacity: 0;
+//     top: 50%;
+//     right: 0;
+//   }
+// }
