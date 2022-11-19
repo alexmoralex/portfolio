@@ -25,11 +25,13 @@ const Icons = ({ toDark }) => {
 
   return(
     <div className="icons">
-      <svg id="theme-icon" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d={prevPoints} strokeWidth="4" onClick={togglePoints} >
-          <animate attributeName="d" from={prevPoints} to={points} dur="0.5s" begin="click" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.5 0 0.5 1"/>
-        </path>
-      </svg>
+      <span onClick={togglePoints}>
+        <svg id="theme-icon" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d={prevPoints} strokeWidth="4" >
+            <animate attributeName="d" from={prevPoints} to={points} dur="0.5s" begin="click" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.5 0 0.5 1"/>
+          </path>
+        </svg>
+      </span>
       <Footer />
     </div>
   );
